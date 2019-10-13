@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "reset";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import "shared/header";
+@import "font-awesome";

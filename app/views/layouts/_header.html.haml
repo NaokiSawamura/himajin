@@ -1,0 +1,22 @@
+.sidebar
+  .sidebar__contents
+    %h1.sidebar__contents__logo
+      = link_to "himajin", root_path
+    .sidebar__contents__list
+      %ul.sidebar__navi
+        %li.sidebar__navi__li
+          = link_to root_path, class: "header-navi" do
+            = fa_icon "send", class: "header-icon"
+            %p 投稿する
+        %li.sidebar__navi__li
+          = link_to root_path, class: "header-navi" do
+            = fa_icon "home", class: "header-icon__home"
+            %p ホーム
+        %li.sidebar__navi__li
+          = link_to root_path, class: "header-navi" do
+            = fa_icon "envelope", class: "header-icon"
+            %p メッセージ
+        %li.sidebar__navi__li
+          = link_to root_path, class: "header-navi" do
+            = image_tag src = 'goku.png', class: "header-icon__gazo", size: "27x27"
+            %p マイページ
