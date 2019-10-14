@@ -1,0 +1,18 @@
+.signup-wrapper
+  .signup-container
+    .signup-title メールアドレスでサインアップ
+    .signup-container__box
+      .signup-contents
+      .signup-background
+        .signup-icon
+          = fa_icon "address-card", class: "signup-key"
+        .signup-form
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            = f.text_field :name, autofocus: true, placeholder: "アカウント名", class: "signup-field"
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "signup-field"
+            = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上のパスワード", class: "signup-field"
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "再度パスワードを入力", class: "signup-field"
+            = f.submit "サインアップ", class: "signup-btn"
+          .move-login-btn
+            = link_to "ログインはこちら", new_user_session_path, class: "go-login"

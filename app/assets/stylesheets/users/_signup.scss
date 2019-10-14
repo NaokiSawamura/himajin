@@ -1,18 +1,18 @@
 $haikei: rgb(16, 18, 37);
 $main-color: #FC0;
 
-.login-wrapper {
+.signup-wrapper {
   width: 100%;
   height: 100vh;
   background-color: $haikei;
   position: relative;
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
-.login-container {
+.signup-container {
   width: 30%;
-  height: 550px;
-  margin: 90px auto 0;
+  height: 680px;
+  margin: 80px auto 0;
   &__box {
     width: 95%;
     height: 80%;
@@ -20,7 +20,8 @@ $main-color: #FC0;
     margin: 0 auto;
   }
 }
-.login-title {
+
+.signup-title {
   width: 95%;
   height: 45px;
   margin: 0 auto;
@@ -31,7 +32,7 @@ $main-color: #FC0;
   font-weight: 600;
 }
 
-.login-icon {
+.signup-icon {
   width: 70px;
   height: 70px;
   background-color: white;
@@ -41,37 +42,34 @@ $main-color: #FC0;
   float: center;
   z-index: 1;
 }
-.login-background {
+
+.signup-background {
   width: 100%;
   height: 40px;
   background-color: $main-color;
   margin-right: 10px;
 }
 
-.login-key {
-  font-size: 55px;
+.signup-key {
+  font-size: 46px;
   color: $haikei;
-  margin: 10px 0 0 17px;
+  margin: 13px 0 0 9px;
 }
 
-.login-form {
+.signup-form {
   width: 73%;
   height: 300px;
   margin: 20px auto;
 }
 
-.login-field {
+.signup-field {
   width: 88%;
   height: 30px;
   padding: 5px 15px;
   margin: 15px 0 10px;
 }
 
-.login-checkbox {
-  margin-top: 15px;
-}
-
-.login-btn {
+.signup-btn {
   width: 100%;
   height: 50px;
   margin-top: 25px; 
@@ -85,12 +83,12 @@ $main-color: #FC0;
   }
 }
 
-.move-signup-btn {
+.move-login-btn {
   width: 100%;
   height: 20px;
   text-align: center;
   margin-top: 30px;
 }
-.go-signup {
+.go-login {
   color: $haikei;
 }
