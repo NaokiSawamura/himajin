@@ -87,8 +87,10 @@ $main-color: rgb(236, 189, 0);
         font-weight: 600;
         font-size: 18px;
         transition    : .25s;
+        color: $main-color;
         &:hover {
-          color: $main-color;
+          text-shadow: rgb(201, 161, 0) 5px 1px 60px;
+          color: rgb(255, 236, 158);
         }
       }
       &__time {
@@ -106,7 +108,7 @@ $main-color: rgb(236, 189, 0);
       min-height: 28px;
       max-height: 700px;
       & p {
-        padding: 5px 10px 5px;
+        padding: 5px 30px 5px 10px;
       }
     }
     &__bottom {

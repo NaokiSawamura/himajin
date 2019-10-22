@@ -1,7 +1,7 @@
 .sidebar
   .sidebar__contents
     %h1.sidebar__contents__logo
-      = link_to "kiyochan", root_path
+      = link_to "The Borenow!", root_path
     .sidebar__contents__list
       - if user_signed_in?
         %ul.sidebar__navi
@@ -18,9 +18,20 @@
               = image_tag src = 'goku.png', class: "header-icon__gazo", size: "27x27"
               %p マイページ
           %li.sidebar__navi__li__tweet
-            = link_to root_path, class: "header-navi__tweet" do
+            = link_to new_tweet_path, class: "header-navi__tweet" do
               = fa_icon "send", class: "header-icon"
               %p 投稿する
+            -# %section#tweet-modal-area.tweet-modal__area
+            -#   #tweet-modal-bg.tweet-modal__bg
+            -#   .tweet-wrapper
+            -#     .tweet-wrapper__top
+            -#       #closeModal.closeModal ×
+            -#     .tweet-wrapper__main
+            -#       -# = form_tag('/tweets', method: :post) do
+            -#       -#   %textarea{cols: "35", name: "text", placeholder: "入力する", rows: "3", class: "post-form__content"}
+            -#       -#   %input{type: "submit", value: "投稿する", href: "/tweets", class: "post-form__submit", data: { confirm: "投稿は削除、編集できませんがよろしいですか？" }}/
+            -#       = form_for @tweet do |f|
+            -#         = f.text_area :content, autofocus: true, class:"field-first-area", placeholder:"こんにちは"
       - else
         %ul.sidebar__navi__logout
           %li.sidebar__navi__li

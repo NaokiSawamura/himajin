@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       get 'sign_up_select'
     end
   end
+  resources :tweets, only: [:create, :new, :edit, :show, :update, :destroy] do
+  end
 end
