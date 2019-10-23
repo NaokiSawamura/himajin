@@ -41,7 +41,7 @@ Things you may want to cover:
 私が学んだ600時間の学習カリキュラムで学んだ内容、
 そしてその応用や、カリキュラム外で学んだ内容のアウトプットのために制作しました。
 
-# himajinDB設計
+# 「The Borenow!」DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
