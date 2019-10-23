@@ -2,36 +2,20 @@
 .tweets-index
   .tweets-index__header
     %p.tweets-index__header__title ホーム/投稿
-    = link_to root_path do
+    = link_to new_tweet_path do
       = fa_icon "repeat", class: "tweets-index__header__reload"
   .tweet-box
     .tweet-box__left
       .tweet-box__left__icon
-        = image_tag src = 'goku.png', class: "tweet-icon"
+        = link_to user_path(current_user.id) do
+          = image_tag src = 'goku.png', class: "tweet-icon"
     .tweet-box__right
-      = form_for @tweet, html: {multipart: true} do |f|
-        = f.text_area :content, autofocus: true, class:"tweet-box__right__input", placeholder:"いまなにしてる？"
-        = f.submit "投 稿", class:"field-button"
+      = form_tag('/tweets', method: :post) do
+        .post-form
+          %textarea{name: "content", placeholder: "いまなにしてる？", class: "tweet-box__right__input"}
+          %input{type: "submit", value: "投稿する", href: "/tweets", class: "field-button"}
+      -# = form_for @tweet do |f|
+      -#   = f.text_area :content, autofocus: true, class:"tweet-box__right__input", placeholder:"いまなにしてる？"
+      -#   = f.submit "投 稿", class:"field-button"
   .tweets-container
-    .tweets-index__main
-      .tweets-contents
-        .tweets-contents__left
-          .tweets-contents__left__icon
-            = link_to root_path do
-              = image_tag src = 'goku.png', class: "tweet-icon"
-        .tweets-contents__right
-          .tweets-contents__right__top
-            = link_to "孫正義", new_user_registration_path, class: "tweets-contents__right__top__name"
-            .tweets-contents__right__top__time
-              %p 2019/10/15 12:35
-          = link_to new_user_registration_path, class: "tweets-contents__right__main" do
-            %p ひゃん？
-          .tweets-contents__right__bottom
-            .tweets-contents__right__bottom__comment
-              = link_to root_path do
-                = fa_icon "comment", class: "tweets-contents__right__bottom__comment__icon"
-                = link_to "", root_path, class: "tweets-contents__right__bottom__comment__length"
-            .tweets-contents__right__bottom__like
-              = link_to root_path do
-                = fa_icon "heart", class: "tweets-contents__right__bottom__like__icon"
-                = link_to "1", root_path, class: "tweets-contents__right__bottom__like__length"
+    = render "tweets/tweet"

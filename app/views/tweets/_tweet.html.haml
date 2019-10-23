@@ -1,0 +1,23 @@
+- @tweets.each do |tweet|
+  .tweets-contents
+    .tweets-contents__left
+      .tweets-contents__left__icon
+        = link_to root_path do
+          = image_tag src = 'goku.png', class: "tweet-icon"
+    .tweets-contents__right
+      .tweets-contents__right__top
+        = link_to tweet.user.name, new_user_registration_path, class: "tweets-contents__right__top__name"
+        .tweets-contents__right__top__time
+          = tweet.created_at.strftime("%Y/%m/%d %H:%M")
+      = link_to tweet_path(tweet.id), class: "tweets-contents__right__main" do
+        %p
+          = tweet.content
+      .tweets-contents__right__bottom
+        .tweets-contents__right__bottom__comment
+          = link_to root_path do
+            = fa_icon "comment", class: "tweets-contents__right__bottom__comment__icon"
+            = link_to "124", root_path, class: "tweets-contents__right__bottom__comment__length"
+        .tweets-contents__right__bottom__like
+          = link_to root_path do
+            = fa_icon "heart", class: "tweets-contents__right__bottom__like__icon"
+            = link_to "5678", root_path, class: "tweets-contents__right__bottom__like__length"

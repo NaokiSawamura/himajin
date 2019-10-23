@@ -51,6 +51,7 @@ $main-color: rgb(236, 189, 0);
   font-size: 18px;
   font-weight: 600;
   transition    : .3s;
+  outline: none;  
   &:hover {
     background: $main-color;
   }
