@@ -1,28 +1,24 @@
 class TweetsController < ApplicationController
 
   def index
-    @tweets = Tweet.includes(:user)
+    @tweets = Tweet.includes(:user).order("created_at DESC")
   end
 
   def new
-    if user_signed_in?
-      @tweet = current_user.tweets.new
-      # @tweet.images.build
-      else
-        redirect_to new_user_session_path
-      end
+    @tweets = Tweet.includes(:user).order("created_at DESC")
+  end
+
+  def show
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
-    if @tweet.save!
-      params[:images][:image_url].each do |image|
-        @tweet.images.create!(image: image, item_id: @tweet.id)
-      end
-      redirect_to root_path
-    else
-      redirect_to new_items_path
-    end
+    Tweet.create(content: tweet_params[:content], user_id: current_user.id)
+    redirect_to new_tweet_path
+  end
+
+  private
+  def tweet_params
+    params.permit(:content)
   end
 
 end
