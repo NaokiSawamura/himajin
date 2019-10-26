@@ -9,11 +9,19 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @tweet = Tweet.find(params[:id])
   end
 
   def create
     Tweet.create(content: tweet_params[:content], user_id: current_user.id)
     redirect_to new_tweet_path
+  end
+
+  def destroy
+    if @tweet.user_id == current_user.id
+      @tweet.destroy 
+      redirect_to root_path
+    end
   end
 
   private
