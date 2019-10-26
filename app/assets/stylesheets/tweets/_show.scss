@@ -1,0 +1,140 @@
+$haikei: rgb(36, 38, 56);
+$main-color: rgb(236, 189, 0);
+
+.tweet-show {
+  overflow: scroll;
+  float: left;
+  width: 45%;
+  height: 100vh;
+  background-color: $haikei;
+  border-right: 1px solid rgba(238, 238, 238, 0.6);
+  &__header {
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.6);
+    &__title {
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      float: left;
+    }
+    &__back {
+      width: 30px;
+      height: 27px;
+      text-align: center;
+      float: left;
+      color: $main-color;
+      font-size: 26px;
+      margin: 0 15px;
+      padding-top: 3px;
+      border-radius: 50px;
+      transition: .3s;
+      &:hover {
+        color: rgba(226, 194, 67, 0.6);
+      }
+    }
+  }
+}
+
+.tweet-content {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  max-height: 700px;
+  &__top {
+    padding: 10px;
+    width: 97%;
+    height: 60px;
+    &__icon {
+      width: 10%;
+      float: left;
+    }
+    &__right {
+      margin: 6px 0 0 5px;
+      float: left;
+      width: 70%;
+      &__name {
+        float: left;
+        width: 80%;
+        color: white;
+        font-weight: 600;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &__time {
+        float:left;
+        width: 80%;
+        color: white;
+      }
+    }
+  }
+}
+.tweet-delete {
+  margin: 15px 30px 0 0 ;
+  font-weight: 600;
+  color: $main-color;
+  float:right;
+  transition: .3s;
+  &:hover {
+    color: rgba(226, 194, 67, 0.6);
+  }
+}
+
+.tweet-content__main {
+  margin: 10px 10px 25px 15px;
+  color: white;
+  font-size: 22px;
+}
+
+.tweet-content__bottom {
+  height: 40px;
+  width: 100%;
+  border-top: 1px solid rgba(238, 238, 238, 0.6);;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.6);
+  &__comment {
+    margin-left: 28%;
+    float: left;
+    height: 32px;
+    width: 15%;
+    padding-top: 8px;
+    &__icon {
+      color: white;
+      font-size: 24px;
+      float:left;
+      &:hover {
+        color: $main-color;
+        text-shadow: #FC0 5px 1px 60px;
+      }
+    }
+    &__length {
+      margin: 2px 0 0 5px;
+      color: white;
+      float:left;
+    }
+  }
+  &__like {
+    margin-left: 15%;
+    float: left;
+    height: 32px;
+    width: 15%;
+    padding-top: 8px;
+    &__icon {
+      float:left;
+      color: white;
+      font-size: 22px;
+      margin-top: 3px;
+      &:hover {
+        color: rgb(238, 53, 124);
+        text-shadow: rgb(238, 53, 124) 5px 1px 60px;
+      }
+    }
+    &__length {
+      margin: 2px 0 0 5px;
+      color: white;
+      float:left;
+    }
+  }
+}

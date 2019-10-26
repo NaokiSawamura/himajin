@@ -1,1 +1,28 @@
-あああ
+= render "shared/header"
+.tweet-show
+  .tweet-show__header
+    = link_to root_path do
+      = fa_icon "caret-left", class: "tweet-show__header__back"
+    %p.tweet-show__header__title 投稿
+  .tweet-content
+    .tweet-content__top
+      .tweet-content__top__icon
+        = link_to root_path do
+          = image_tag src = 'goku.png', class: "tweet-icon"
+      .tweet-content__top__right
+        = link_to @tweet.user.name, new_user_registration_path, class: "tweet-content__top__right__name"
+        .tweet-content__top__right__time
+          = @tweet.created_at.strftime("%Y/%m/%d %H:%M")
+      - if user_signed_in? && @tweet.user_id == current_user.id
+        = link_to "削除", tweet_path(@tweet.id), method: :delete, class: "tweet-delete", data: {confirm: "本当に削除しますか？"}
+    .tweet-content__main
+      = @tweet.content
+    .tweet-content__bottom
+      .tweet-content__bottom__comment
+        = link_to root_path do
+          = fa_icon "comment", class: "tweet-content__bottom__comment__icon"
+          .tweet-content__bottom__comment__length 124
+      .tweet-content__bottom__like
+        = link_to root_path do
+          = fa_icon "heart", class: "tweet-content__bottom__like__icon"
+          .tweet-content__bottom__like__length 5678
