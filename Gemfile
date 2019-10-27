@@ -68,3 +68,4 @@ gem 'pry-rails'
 gem "font-awesome-rails"
 gem 'gretel'
 gem 'jquery-rails'
+gem 'rails-i18n'

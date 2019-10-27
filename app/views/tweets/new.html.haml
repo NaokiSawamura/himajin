@@ -1,4 +1,5 @@
 = render "shared/header"
+-# - binding.pry
 .tweets-index
   .tweets-index__header
     %p.tweets-index__header__title ホーム/投稿
@@ -10,12 +11,13 @@
         = link_to user_path(current_user.id) do
           = image_tag src = 'goku.png', class: "tweet-icon"
     .tweet-box__right
-      = form_tag('/tweets', method: :post) do
+      = form_tag('/tweets/', method: :post, local: true) do
         .post-form
           %textarea{name: "content", placeholder: "いまなにしてる？", class: "tweet-box__right__input"}
-          %input{type: "submit", value: "投稿する", href: "/tweets", class: "field-button"}
+          %input{type: "submit", value: "投稿する", class: "field-button"}
       -# = form_for @tweet do |f|
       -#   = f.text_area :content, autofocus: true, class:"tweet-box__right__input", placeholder:"いまなにしてる？"
       -#   = f.submit "投 稿", class:"field-button"
   .tweets-container
     = render "tweets/tweet"
+= flash.now[:notice]
