@@ -1,0 +1,72 @@
+$haikei: rgb(36, 38, 56);
+$main-color: rgb(236, 189, 0);
+
+.comments {
+  margin-top: 5px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  min-height: 75px;
+  max-height: 750px;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.6);
+  background-color: $haikei;
+  transition    : .2s;
+  &:hover {
+    background-color: rgba(44, 47, 80, 0.4);
+  }
+  &__left {
+    float: left;
+    width: 12%;
+    min-height: 75px;
+    max-height: 700px;
+    &__icon {
+      padding: 5px 0 0 14%;
+    }
+  }
+  &__right {
+    margin-top: 10px;
+    float: left; 
+    width: 88%;
+    min-height: 75px;
+    max-height: 700px;
+    &__top {
+      width: 100%;
+      height: 30px;
+      &__name {
+        float: left;
+        min-width: 15px;
+        max-width: 400px;
+        height: 28px;
+        padding: 2px 0 0 1px;
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+        transition    : .25s;
+        color: white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &__time {
+        padding-top: 6px;
+        float: left;
+        width: 25%;
+        height: 24px;
+        padding-left: 10px;
+        font-size: 14px;
+        color: white;
+      }
+    }
+    &__main {
+      color: white;
+      width: 96.5%;
+      min-height: 28px;
+      max-height: 700px;
+      font-size: 18px;
+      & p {
+        padding: 5px 30px 5px 10px;
+        background-color: rgb(36, 38, 56);
+      }
+    }
+  }
+}
