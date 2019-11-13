@@ -29,14 +29,14 @@
   = render "comments/comment"
 .comment-new
   - if user_signed_in?
-    .comment-container
-      .comment-container__top
-        このつぶやきにコメントをする
-      = link_to new_comment_path, class: "comment-container__btn" do
-        = fa_icon "commenting", class: "header-icon__home"
-      = form_tag("/tweets/#{@tweet.id}/comments", method: :post) do
-        .post-form
-          %textarea{name: "content", placeholder: "いまなにしてる？", class: "comment-box__right__input"}
-          %input{type: "submit", value: "投稿する", href: "/tweets", class: "field-button"}
+    .comment-box
+      .comment-box__left
+        .comment-box__left__icon
+          = image_tag src = 'goku.png', class: "tweet-icon"
+      .comment-box__right
+        = form_tag("/tweets/#{@tweet.id}/comments", method: :post) do
+          .post-form
+            %textarea{name: "content", placeholder: "いまなにしてる？", class: "comment-box__right__input"}
+            %input{type: "submit", value: "投稿する", href: "/tweets", class: "field-button"}
   - else
     サインイン

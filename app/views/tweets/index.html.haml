@@ -6,3 +6,5 @@
       = fa_icon "repeat", class: "tweets-index__header__reload"
   .tweets-index__main
     = render "tweets/tweet"
+.tweet-index__right
+  = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "log-out-btn"
