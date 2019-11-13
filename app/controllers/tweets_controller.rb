@@ -24,6 +24,10 @@ class TweetsController < ApplicationController
     end
   end
 
+  def comment
+    @tweet = Tweet.find(params[:id])
+  end
+
   private
   def tweet_params
     params.permit(:content)
